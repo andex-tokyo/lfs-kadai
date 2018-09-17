@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Counting stars</title>
+</head>
+<body>
+<h1>Counting Stars</h1>
+<% if !current_user.nil? %>
+    <li>こんにちは<%= current_user.name %>さん</li>
+    <li><a href="/signout">logout</a></li>
+  <% end %>
+<a href="/new"> CREATE NEW COUNT</a>
+
+	<img src="<%= @count.img %>"><br>
+	<%= @count.title %></a><br>
+	<%= @count.number%> <br>
+	<form action="/count_d/<%= @count.id %>" method="GET">
+		<input type="submit" value="+">
+	</form>
+  	<% @count.users.each do |counter| %>
+      <%= counter.name %><br>
+    <% end %>
+
+
+</body>
+</html>

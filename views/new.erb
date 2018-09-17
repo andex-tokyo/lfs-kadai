@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Counting Star</title>
+</head>
+<body>
+<h1>Counting Stars</h1>
+<% if !current_user.nil? %>
+    <li>こんにちは<%= current_user.name %>さん</li>
+    <li><a href="/signout">logout　</a></li>
+  <% end %>
+<h2> CREATE NEW COUNT</h2>
+
+	<form action="/new" method="POST" enctype="multipart/form-data">
+    <input type="text" placeholder="title" name="title"> <br>
+    <input type="file" name="file"> <br>
+		<input type="submit" value="start count">
+	</form>
+
+</body>
+</html>
